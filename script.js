@@ -116,9 +116,10 @@ $(function(){
     }
     statesRow.push(row)
     draw(row)
+    $('#count').text(currentRow + 1)
     currentRow++
 
-    if(currentRow < 13){
+    if(currentRow < 15){
       setTimeout(generatePattern, 1000)
     }
   }
