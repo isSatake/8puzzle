@@ -1,3 +1,9 @@
+/*
+ *  created by Hiroaki Satake (81724496)
+ */
+
+ //TODO 直前のパターンとはカブらないが、数回置いてカブるときがあるのでハッシュ等を使って排除する
+
 'use strict'
 
 $(function(){
