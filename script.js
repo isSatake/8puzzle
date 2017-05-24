@@ -22,48 +22,29 @@ Puzzle.prototype.generate = function(){
   //左→右→上→下の順
   //親の状態(this.state)とカブらないようにする
 
-  //concatで値渡し
-  let leftState = this.state.concat()
-  let rightState = this.state.concat()
-  let topState = this.state.concat()
-  let bottomState = this.state.concat()
-
-  //0の場所に左隣の数を入れる→0を左に入れる
-  try {
-    console.log(zeroPos[1])
-    leftState[zeroPos[0]][zeroPos[1]] = leftState[zeroPos[0]][zeroPos[1] - 1]
-    leftState[zeroPos[0]][zeroPos[1] - 1] = '0'
-  } catch(e) {
-    leftState = undefined
+  if(zeroPos[1] > 0) { //左を作る
+    let left = new Puzzle(this.state)
+    left.state
+    states.push(left)
   }
 
-  // try {
-  //   rightState[zeroPos[0]][zeroPos[1]] = rightState[zeroPos[0]][zeroPos[1] + 1]
-  //   rightState[zeroPos[0]][zeroPos[1] + 1] = '0'
-  // } catch(e) {
-  //   rightState = undefined
-  // }
-  //
-  // try {
-  //   topState[zeroPos[0]][zeroPos[1]] = topState[zeroPos[0] + 1][zeroPos[1]]
-  //   topState[zeroPos[0] + 1][zeroPos[1]] = '0'
-  // } catch(e) {
-  //   topState = undefined
-  // }
-  //
-  // try {
-  //   bottomState[zeroPos[0]][zeroPos[1]] = bottomState[zeroPos[0] - 1][zeroPos[1]]
-  //   bottomState[zeroPos[0] - 1][zeroPos[1]] = '0'
-  // } catch(e) {
-  //   bottomState = undefined
-  // }
+  if(zeroPos[1] < 2) { //右を作る
+    let right = new Puzzle(this.state)
+    right.state
+    states.push(right)
+  }
 
-  console.log(leftState)
+  if(zeroPos[0] > 0) { //上を作る
+    let top = new Puzzle(this.state)
+    top.state
+    states.push(top)
+  }
 
-  if(leftState) states.push(new Puzzle(leftState))
-  if(rightState) states.push(new Puzzle(rightState))
-  // if(topState) states.push(new Puzzle(topState))
-  // if(bottomState) states.push(new Puzzle(bottomState))
+  if(zeroPos[0] < 2) { //下を作る
+    let bottom = new Puzzle(this.state)
+    bottom.state
+    states.push(bottom)
+  }
 
   return states
 }
