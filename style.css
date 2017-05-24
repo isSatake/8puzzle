@@ -18,3 +18,12 @@ div {
 	clear: both;
 	display: block;
 }
+
+[boundary=true] {
+  border-right: solid 1px;
+  margin-right: 4px;
+}
+
+[end=true] {
+  background-color: #feb3ff
+}
