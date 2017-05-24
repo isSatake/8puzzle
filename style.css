@@ -1,0 +1,20 @@
+div {
+  font-size: 3px;
+}
+
+.col {
+  background-color: #EEE;
+  margin-right: 5px;
+  padding: 5px;
+  float: left;
+}
+
+.row {
+  margin-bottom: 5px;
+}
+
+.clearfix:after{
+	content: "";
+	clear: both;
+	display: block;
+}
