@@ -1,2 +1,2 @@
 # 8puzzle
-https://github.com/stkay/8puzzle
+https://stkay.github.io/8puzzle/
